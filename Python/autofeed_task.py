@@ -20,17 +20,18 @@ def getWeightOfFood():
 def Get_Dog_size(total_weight):
     #1.calc total weight of food in 5 containers, 
     dog_size = input("Please enter the size of your dog, small, medium or large") #display “Please enter the size of your dog: small, medium or large”
-    if  dog_size == "small" and total_weight > 110 and total_weight < 140:
+    if  dog_size == "small" and total_weight >110 and total_weight <140:
         print("This weight is suitable!!")
-    elif dog_size == "medium" and total_weight > 330 and total_weight <440:
+    elif dog_size == "medium" and total_weight >330 and total_weight <440:
         print("This weight is suitable")
-    elif dog_size == "large" and total_weight > 690 and total_weight <900:
+    elif dog_size == "large" and total_weight >690 and total_weight <900:
         print("This weight is suitable")
     return dog_size
 
 def rounded_avg(total_weight):
     averageWeight = total_weight /5
     averageWeight = round(averageWeight, 1) #rounds to uno deciamal place
+    
 
 
     
