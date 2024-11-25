@@ -1,1 +1,1 @@
-Computing science higher (scotland forever) 
+Computing science higher
