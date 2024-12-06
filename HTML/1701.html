@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Event Handlers Lesson</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .interactive-box {
+        width: 300px;
+        height: 200px;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 10px;
+      }
+      .interactive-box:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="1"
+      class="interactive-box"
+      onmouseover="handleMouseOver(1)"
+      onmouseout="handleMouseOut(1)"
+      onclick="handleClick(1)"
+    >
+      Interact with me!
+    </div>
+    <div
+      id="2"
+      class="interactive-box"
+      onmouseover="handleMouseOver(2)"
+      onmouseout="handleMouseOut(2)"
+      onclick="handleClick(2)"
+    >
+      No, interact with meeeeeeee!
+    </div>
+
+    <script>
+      // Global variable to track click count
+      let clickCount = 0;
+      const clicks = [0,0];
+
+      function handleMouseOver(num) {
+        // Change text and style when mouse enters the box
+        const box = document.getElementById(num);
+        box.textContent = "Mouse is over me!";
+        box.style.backgroundColor = "#e74c3c";
+      }
+
+      function handleMouseOut(num) {
+        // Reset text and style when mouse leaves the box
+        const box = document.getElementById(num);
+        box.textContent = "Interact with me!";
+        box.style.backgroundColor = "#3498db";
+      }
+
+      function handleClick(num) {
+        // Increment click count and update text
+        clicks[num-1] ++;
+        const box = document.getElementById(num);
+        box.textContent = `Clicked ${clicks[num-1]} time${
+          clicks[num-1] !== 1 ? "s" : ""
+        }!`;
+      }
+    </script>
+  </body>
+</html>
