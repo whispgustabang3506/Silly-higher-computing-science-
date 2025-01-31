@@ -47,6 +47,20 @@ def DisplaySightings(specifiedCountry, numSightings):
     pass
 #pass does nothing but lets the program contuine 
 
+#CountYearSightings()
+#Count the sightings each year.
+#IN: thisDate [ ]
+#OUT:
+
+def CountYearSightings(thisDate, specifiedyear):
+    yearsightings = 0 
+    for index in range(0, len(thisDate)):
+        if thisDate[index] == specifiedyear:
+            yearsightings = yearsightings + 1
+            return yearsightings
+
+def displayyearlysightings(yearsightings, specifiedyear)
+    
 
 #main program 
 thisDate, country, location, shape, description = importFile()
@@ -65,3 +79,4 @@ DisplaySightings(specifiedCountry, numSightings)
 specifiedCountry = "Northern Ireland"
 numSightings = CountSightings(country, specifiedCountry)
 DisplaySightings(specifiedCountry, numSightings)
+
