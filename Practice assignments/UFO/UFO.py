@@ -53,14 +53,15 @@ def DisplaySightings(specifiedCountry, numSightings):
 #OUT:
 
 def CountYearSightings(thisDate, specifiedyear):
-    yearsightings = 0 
+    yearsightings = 0
     for index in range(0, len(thisDate)):
         if thisDate[index] == specifiedyear:
             yearsightings = yearsightings + 1
-            return yearsightings
+            return yearsightings, specifiedyear
 
-def displayyearlysightings(yearsightings, specifiedyear)
-    
+def displayyearlysightings(yearsightings, thisDate):
+    print(thisDate, yearsightings)
+    pass
 
 #main program 
 thisDate, country, location, shape, description = importFile()
@@ -80,3 +81,6 @@ specifiedCountry = "Northern Ireland"
 numSightings = CountSightings(country, specifiedCountry)
 DisplaySightings(specifiedCountry, numSightings)
 
+specifiedyear = thisDate[0]
+yearsightings = CountYearSightings(thisDate, specifiedyear)
+displayyearlysightings(specifiedyear, yearsightings)
