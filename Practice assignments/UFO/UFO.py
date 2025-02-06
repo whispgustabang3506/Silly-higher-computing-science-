@@ -68,6 +68,26 @@ def CountYearSightings(thisDate):
 #IN: location [ ], thisDate [ ], shape [ ], description [ ] 
 #OUT:
 
+def findlocation(location, thisDate, shape, description):
+    specifiedlocation = input("please enter a location")    
+    counter = 0 
+    found = False
+    foundLocation = -1
+    while counter<len(location) and found == False:
+        if location[counter] == specifiedlocation:
+            found = True
+            counter = counter
+    else:
+        counter = counter + 1 
+    if found == True:
+        print(thisDate[counter], shape[counter], description[counter])
+    else:
+        print("toilet")
+        
+
+            
+    
+        
 
 #main program 
 thisDate, country, location, shape, description = importFile()
@@ -89,3 +109,5 @@ DisplaySightings(specifiedCountry, numSightings)
 
 specifiedyear = thisDate[0]
 yearsightings = CountYearSightings(thisDate)
+
+findlocation(location, thisDate, shape, description ) 
