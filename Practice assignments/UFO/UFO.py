@@ -52,16 +52,22 @@ def DisplaySightings(specifiedCountry, numSightings):
 #IN: thisDate [ ]
 #OUT:
 
-def CountYearSightings(thisDate, specifiedyear):
+def CountYearSightings(thisDate):
     yearsightings = 0
-    for index in range(0, len(thisDate)):
-        if thisDate[index] == specifiedyear:
+    for index in range(0, len(thisDate)-1):
+        currDate = thisDate[index][6:10]
+        nextDate = thisDate[index+1][6:10]
+        if currDate == nextDate:
             yearsightings = yearsightings + 1
-            return yearsightings, specifiedyear
+        else:
+            print(currDate, yearsightings)
+            yearsightings = 0
 
-def displayyearlysightings(yearsightings, thisDate):
-    print(thisDate, yearsightings)
-    pass
+#FindSightingsByLocation() 
+#Count the sightings each year. 
+#IN: location [ ], thisDate [ ], shape [ ], description [ ] 
+#OUT:
+
 
 #main program 
 thisDate, country, location, shape, description = importFile()
@@ -82,5 +88,4 @@ numSightings = CountSightings(country, specifiedCountry)
 DisplaySightings(specifiedCountry, numSightings)
 
 specifiedyear = thisDate[0]
-yearsightings = CountYearSightings(thisDate, specifiedyear)
-displayyearlysightings(specifiedyear, yearsightings)
+yearsightings = CountYearSightings(thisDate)
