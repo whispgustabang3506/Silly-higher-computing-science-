@@ -1,0 +1,54 @@
+/* Remove browser defaults */
+* {margin:0;padding:0}
+nav{background-color: white;}
+body {background-color: #d3d7da;font-family: Verdana;}
+main {background-color: white;}
+body{
+  width:900px;
+  margin:auto;
+
+}
+
+header{
+  background-color: crimson;
+  font-size: 50px;
+  color: white;
+  padding: 10px;
+
+}
+
+form {padding:15px; margin:0px;}
+
+nav ul {list-style-type: none;font-size: 20px;}
+
+nav ul li {
+  float:left;
+
+  width:200px;
+  text-align: center;
+  }
+
+nav ul li a {
+  display: block;
+  padding:10px;
+  color: crimson
+}
+
+nav ul li a:hover{background-color: crimson; color:white;}
+
+main{clear:both; margin-top:30px;}
+
+div{float:left;}
+
+#homeMain{
+height:250px;
+margin-left: 350px;
+margin-top:20px;
+font-size:20px;
+padding-top:20px;
+}
+
+
+
+
+footer{clear:both; margin-top: 10px;background-color:white; color: crimson; padding:10px; text-align: center;}
