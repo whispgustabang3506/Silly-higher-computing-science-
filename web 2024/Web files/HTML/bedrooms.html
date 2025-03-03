@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Bedrooms</title>
+<link rel="stylesheet" href="..\CSS\styles.css">
+<link rel="icon" href="..\Images\icon.ico" >
+<script>
+    function showluxury(){
+      document.getElementById("1").style.display = "block";
+      document.getElementById("2").style.display = "none";
+      document.getElementById("3").style.display = "none";
+    }
+    function showcontempary(){
+      document.getElementById("1").style.display = "none";
+      document.getElementById("2").style.display = "block";
+      document.getElementById("3").style.display = "none";
+    }
+    function showmodern(){
+      document.getElementById("1").style.display = "none";
+      document.getElementById("2").style.display = "none";
+      document.getElementById("3").style.display = "block";
+    }
+    
+        </script>
+</head>
+<body>
+
+<header>
+<img src="..\Images\handymaxi.png">
+</header>
+
+    
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a id="highlight" href="bedrooms.html">Bedrooms</a></li>
+<li><a href="bathrooms.html">Bathrooms</a></li>
+<li><a href="kitchens.html">Kitchens</a></li>
+<li><a href="quote.html">Get a quote</a></li>
+</ul>
+</nav>
+
+    
+<main>
+<h2>Bedrooms</h2><br>
+<p>At HandyMaxi we can create stunning bedrooms for any taste and any budget.</p>
+<br>
+<p>Click on the buttons below to find out a little more about different styles of bedroom.</p>
+<section>
+
+<section id = "first">
+<img class = "button" src = "..\Images\luxuryButton.png" onclick="showluxury()">
+<img class = "bed" src = "..\Images\luxuryBedroom.png">
+<p  id="1" style="display: none;">This particular bedroom features a few great functional examples such as the floating bed frame with integrated nightstands and the seamless built-in closet.</p>
+</section>
+
+<section id = "second">
+<img class = "button" src = "..\Images\contemporaryButton.png" onclick="showcontempary()">
+<img class = "bed" src = "..\Images\contemporaryBedroom.png">
+<p id="2" style="display: none;">A bed custom made by HandiMaxi anchors this master bedroom in this customer's house decorated by our decorating partners.</p>
+</section>
+
+<section id = "third">
+<img class = "button" src = "..\Images\modernButton.png" onclick="showmodern()">
+<img class = "bed" src = "..\Images\modernBedroom.png">
+<p id="3" style="display: none;">At HandiMaxi, we love making dreams a reality with our bespoke, luxury bedroom furniture. Every bedroom project, can be a complete redesign or a one-off piece, is curated with style at the heart.</p>
+</section>
+
+</section>
+
+</main>
+    
+<footer>
+<section id = "footleft">
+
+</section>
+<section id = "footmid">
+
+</section>
+<section id = "footright">
+ 
+</section>
+
+</footer>
+
+</body>
+
+</html>
