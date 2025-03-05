@@ -50,9 +50,25 @@ input {border-radius: 7px;font-size: 18px;padding: 5px;}
 
 
 /* Footer Styles */
+footer {height:60px;font-family:Helvetica;background-color:#0b6b30;color:#ffffff;font-size:12pt;margin-top:0px;border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;margin-bottom: 10px; padding: top 10px;}
+#footleft{
+    text-align: center;
+    float: left;
+    width: 33%;
+    
+}
 
-footer {height:60px;font-family:Helvetica;background-color:#0b6b30;color:#ffffff;font-size:12pt;margin-top:0px;border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;margin-bottom: 10px;}
-
+#footmid{
+    text-align: center;
+    float: left;
+    width: 33%;
+    
+}
+#footright{
+    text-align: center;
+    float: left;
+    width: 33%;
+}
 
 /* --------- */
 
