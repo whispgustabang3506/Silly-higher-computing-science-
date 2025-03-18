@@ -19,7 +19,7 @@ def importFile(arrayOfRecords):
         reader = file.readline()
         index = 0
         while reader != "":
-            reader = reader.strip()
+            reader = reader.strip("\n")
             row = reader.split(',')
             arrayOfRecords[index].thisDate = row[0]
             arrayOfRecords[index].country = row[1]
@@ -77,30 +77,39 @@ def CountYearSightings(arrayOfRecords):
 #IN: location [ ], thisDate [ ], shape [ ], description [ ] 
 #OUT:
 
-def findlocation(arrayOfRecords):
+def findlocation(arrayOfRecords):   #pos junk
+    #print(arrayOfRecords)
+    output = ""
+    position = -1
     specifiedlocation = input("please enter a location")    
     counter = 0 
     found = False
     foundLocation = -1
     while counter<len(arrayOfRecords) and found == False:
+        print("*",arrayOfRecords[counter].location,"*", specifiedlocation)
         if arrayOfRecords[counter].location == specifiedlocation:
             found = True
-            counter = counter
-    else:
-        counter = counter + 1 
+        else:
+            counter = counter + 1 
     if found == True:
-        print(arrayOfRecords[counter].thisDate, arrayOfRecords[counter].shape, arrayOfRecords[counter].description)
+        position = counter
+        
     else:
-        print("toilet")
-        
+        output = "toilet"
+    return position
 
+def writeToFile(arrayOfRecords, position):   #writing to file 
+    with open(filePath+'identified_sighting.txt','w') as writefile:
+        if position != -1:
+            output = arrayOfRecords[position].thisDate+ " "+ arrayOfRecords[position].shape + " " +arrayOfRecords[position].description
+            writefile.write(output) 
+        else:
+            writefile.write("Sorry loser. There is nothing to write to the file")    
             
-    
-        
 
 #main program 
-arrayOfRecords = [entry() for index in range(5000)]
-arrayOfRecords = importFile(arrayOfRecords)
+arrayOfRecords = [entry() for index in range(2200)]
+arrayOfRecords = importFile(arrayOfRecords) 
 
 specifiedCountry = "England"
 numSightings = CountSightings(arrayOfRecords, specifiedCountry)
@@ -121,4 +130,5 @@ DisplaySightings(specifiedCountry, numSightings)
 specifiedyear = arrayOfRecords[0].thisDate
 yearsightings = CountYearSightings(arrayOfRecords)
 
-findlocation(arrayOfRecords) 
+position = findlocation(arrayOfRecords) # setting things up 
+writeToFile(arrayOfRecords, position)  #setting things up 
